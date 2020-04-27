@@ -1,0 +1,21 @@
+int Solution::coverPoints(vector<int> &A, vector<int> &B) {
+    int x=A.size();
+    int y=B.size();
+    int c1,c2,count=0,i=0,j=0;
+    while(x>i+1&& y>j+1)
+    {
+        c1=A[i+1]-A[i];
+        c1=abs(c1);
+        c2=B[j+1]-B[j];
+        c2=abs(c2);
+        if(c1>=c2)
+        count+=c1;
+        else
+        count+=c2;
+        i++;
+        j++;
+    }
+    
+    
+    return count;
+}
