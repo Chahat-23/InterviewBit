@@ -1,0 +1,28 @@
+vector<vector<int> > Solution::diagonal(vector<vector<int> > &A) {
+    int n=A.size();
+    int m=A.size()*2;
+    int k=0,i;
+    vector<vector<int> > B(2*n-1);
+    for(i=0;i<n;i++ )
+        {
+            int t=0,y=i;
+            while(t<n&&y>=0){
+            B[k].push_back(A[t][y]);
+            t++;
+            y--;
+        }
+            k++;
+        }
+    for(i=1;i<n;i++ )
+        {
+            int t=i,y=n-1;
+            while(t<n&&y>=0){
+            B[k].push_back(A[t][y]);
+            t++;
+            y--;
+        }
+            k++;
+        }
+        
+    return B;
+}
