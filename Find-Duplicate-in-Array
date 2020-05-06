@@ -1,0 +1,17 @@
+int Solution::repeatedNumber(const vector<int> &A) {
+    int n=A.size(),num=-1;
+    vector<int> B;
+    B.resize(n);
+    for(int i=0;i<A.size();i++)
+    B[i]=A[i];
+    sort(B.begin(),B.end());
+    for(int i=0;i<n-1;i++)
+    {
+        if(B[i]==B[i+1])
+        {
+            num=B[i];
+            break;
+        }
+    }
+    return num;
+}
